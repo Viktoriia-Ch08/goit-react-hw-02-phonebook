@@ -11,6 +11,9 @@ const Container = styled.div`
     rgba(104, 105, 117, 0.9),
     rgba(244, 101, 12, 0.2)
   );
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 `;
 
 const Headline = styled.h1`
