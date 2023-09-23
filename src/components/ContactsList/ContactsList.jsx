@@ -1,6 +1,9 @@
+import { DeleteButton, Item, List } from './ContactsList.styled';
+import { FaTrashAlt } from 'react-icons/fa';
+
 const ContactsList = ({ contacts, filter, handleDeletedContact }) => {
   return (
-    <ul>
+    <List>
       {contacts
         .filter(
           contact =>
@@ -8,17 +11,17 @@ const ContactsList = ({ contacts, filter, handleDeletedContact }) => {
             contact.name.toLowerCase().includes(filter.toLowerCase())
         )
         .map(contact => (
-          <li key={contact.id}>
+          <Item key={contact.id}>
             <p>{`${contact.name}: ${contact.number}`}</p>
-            <button
+            <DeleteButton
               type="button"
               onClick={() => handleDeletedContact(contact.id)}
             >
-              Delete
-            </button>
-          </li>
+              <FaTrashAlt />
+            </DeleteButton>
+          </Item>
         ))}
-    </ul>
+    </List>
   );
 };
 
