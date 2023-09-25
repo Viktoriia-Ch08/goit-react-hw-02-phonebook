@@ -32,19 +32,19 @@ class ContactsList extends Component {
                   .includes(this.props.filter.toLowerCase())
             )
             .map(contact => (
-              <Item key={contact.id}>
-                <label>
+              <label>
+                <Item key={contact.id}>
                   <input
                     type="checkbox"
                     name="contactToDelete"
                     checked={this.state.contactsToDelete.includes(contact)}
                     onChange={() => this.handleCheckboxStatus(contact)}
                   />
-                </label>
-                <p>{`${contact.name}: ${contact.number} ${
-                  contact.type ? `*${contact.type}*` : ''
-                }`}</p>
-              </Item>
+                  <p>{`${contact.name}: ${contact.number} ${
+                    contact.type ? `*${contact.type}*` : ''
+                  }`}</p>
+                </Item>
+              </label>
             ))}
         </List>
         <ButtonWrapper>
