@@ -59,7 +59,7 @@ class ContactsList extends Component {
               }
             }}
           >
-            <FaTrashAlt />
+            <FaTrashAlt className="icon" />
           </DeleteButton>
         </ButtonWrapper>
       </>
