@@ -5,6 +5,8 @@ const FilterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+
+  margin-bottom: 45px;
 `;
 
 const FilterLabel = styled.label`

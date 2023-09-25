@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const List = styled.ul`
   display: flex;
   flex-direction: column;
@@ -9,7 +14,7 @@ const List = styled.ul`
 const Item = styled.li`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
 
   text-transform: capitalize;
 `;
@@ -17,9 +22,10 @@ const Item = styled.li`
 const DeleteButton = styled.button`
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
 
   border-radius: 50px;
   border: 2px solid rgba(82, 82, 91, 1);
@@ -35,4 +41,4 @@ const DeleteButton = styled.button`
     border: 2px solid black;
   }
 `;
-export { List, Item, DeleteButton };
+export { ButtonWrapper, List, Item, DeleteButton };
