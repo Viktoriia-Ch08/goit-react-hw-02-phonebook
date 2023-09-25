@@ -1,11 +1,19 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { FormButton, FormElement, Input, Label } from './ContactForm.styled';
+import {
+  FormButton,
+  FormElement,
+  Input,
+  Label,
+  RadioLabel,
+  RadioWrapper,
+} from './ContactForm.styled';
 
 class Form extends Component {
   state = {
     name: '',
     number: '',
+    type: 'friend',
   };
 
   handleInputChange = event => {
@@ -13,16 +21,25 @@ class Form extends Component {
       [event.currentTarget.name]: event.currentTarget.value,
     });
   };
+
   handleSubmitButton = e => {
     e.preventDefault();
     this.props.onSubmit({ ...this.state, id: nanoid() });
     this.reset();
   };
 
+  handleRadioButtons = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
   reset = () =>
     this.setState({
       name: '',
       number: '',
+      type: 'friend',
     });
 
   render() {
@@ -52,6 +69,38 @@ class Form extends Component {
             required
           />
         </Label>
+        <RadioWrapper>
+          <RadioLabel>
+            <input
+              type="radio"
+              name="type"
+              value="business"
+              onChange={this.handleRadioButtons}
+              checked={this.state.type === 'business'}
+            />
+            buisness
+          </RadioLabel>
+          <RadioLabel>
+            <input
+              type="radio"
+              name="type"
+              value="friend"
+              onChange={this.handleRadioButtons}
+              checked={this.state.type === 'friend'}
+            />
+            friend
+          </RadioLabel>
+          <RadioLabel>
+            <input
+              type="radio"
+              name="type"
+              value="family"
+              onChange={this.handleRadioButtons}
+              checked={this.state.type === 'family'}
+            />
+            family
+          </RadioLabel>
+        </RadioWrapper>
         <FormButton type="submit">Add contact</FormButton>
       </FormElement>
     );

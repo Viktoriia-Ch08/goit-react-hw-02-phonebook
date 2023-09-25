@@ -12,7 +12,9 @@ const ContactsList = ({ contacts, filter, handleDeletedContact }) => {
         )
         .map(contact => (
           <Item key={contact.id}>
-            <p>{`${contact.name}: ${contact.number}`}</p>
+            <p>{`${contact.name}: ${contact.number} ${
+              contact.type ? `*${contact.type}*` : ''
+            }`}</p>
             <DeleteButton
               type="button"
               onClick={() => handleDeletedContact(contact.id)}

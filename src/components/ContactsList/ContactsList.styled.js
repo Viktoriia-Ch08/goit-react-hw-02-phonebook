@@ -10,6 +10,8 @@ const Item = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  text-transform: capitalize;
 `;
 
 const DeleteButton = styled.button`

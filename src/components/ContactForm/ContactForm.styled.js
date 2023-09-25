@@ -30,6 +30,20 @@ const Input = styled.input`
   }
 `;
 
+const RadioWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+`;
+
+const RadioLabel = styled.label`
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
+
+  text-transform: capitalize;
+`;
+
 const FormButton = styled.button`
   width: 150px;
   height: 40px;
@@ -55,4 +69,4 @@ const FormButton = styled.button`
   }
 `;
 
-export { FormElement, Label, Input, FormButton };
+export { FormElement, Label, Input, RadioWrapper, RadioLabel, FormButton };
