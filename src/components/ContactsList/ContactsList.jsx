@@ -32,8 +32,8 @@ class ContactsList extends Component {
                   .includes(this.props.filter.toLowerCase())
             )
             .map(contact => (
-              <label>
-                <Item key={contact.id}>
+              <label key={contact.id}>
+                <Item>
                   <input
                     type="checkbox"
                     name="contactToDelete"
